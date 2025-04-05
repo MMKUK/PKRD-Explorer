@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PKRD Blockchain Explorer</title>
+  <meta charset="UTF-8">
+  <title>PKRD Blockchain Explorer</title>
+  <style>
+    body { font-family: Arial; margin: 30px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .info { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px #ccc; }
+    .item { margin-bottom: 10px; }
+  </style>
 </head>
 <body>
-    <h1>Welcome to the PKRD Blockchain Explorer!</h1>
-    <p>Check your transactions and blockchain status here.</p>
+  <h1>🌐 PKRD Blockchain Explorer</h1>
+  <div class="info" id="explorer">
+    <div class="item">Loading latest blockchain data...</div>
+  </div>
+
+  <script>
+    fetch('latest_data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("explorer").innerHTML = `
+          <div class="item">🔢 <strong>Latest Block:</strong> ${data.latest_block}</div>
+          <div class="item">⏱️ <strong>Timestamp:</strong> ${data.timestamp}</div>
+          <div class="item">📦 <strong>Pending TXs:</strong> ${data.pending_txs}</div>
+          <div class="item">🧱 <strong>Chain Status:</strong> ${data.chain_status}</div>
+          <div class="item">👥 <strong>Wallets:</strong> ${data.wallets}</div>
+          <div class="item">📊 <strong>Total TXs:</strong> ${data.total_txs}</div>
+          <div class="item">🔧 <strong>Network:</strong> ${data.network}</div>
+        `;
+      });
+  </script>
 </body>
 </html>
