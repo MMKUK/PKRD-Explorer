@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ HEAD
   <meta charset="UTF-8">
   <title>PKRD Blockchain Explorer</title>
   <style>
@@ -31,5 +32,77 @@
         `;
       });
   </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PKRD Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen font-sans">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-2 text-green-400">PKRD Blockchain Explorer</h1>
+    <p class="mb-6 text-gray-400">Check transactions, blocks, and wallet status on the PKRD Blockchain.</p>
+
+    <!-- Wallet Lookup -->
+    <div class="mb-6">
+      <label for="wallet" class="block text-sm font-semibold mb-1">Search Wallet Address:</label>
+      <input type="text" id="wallet" placeholder="0x..." class="w-full p-2 bg-gray-800 rounded border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400" />
+    </div>
+
+    <!-- Dashboard Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-lg font-semibold text-green-300">Total Supply</h3>
+        <p class="text-xl mt-2 font-bold">100,000,000 PKRD</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-lg font-semibold text-green-300">Block Height</h3>
+        <p class="text-xl mt-2 font-bold">1,234</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-lg font-semibold text-green-300">Active Wallets</h3>
+        <p class="text-xl mt-2 font-bold">45,678</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-lg font-semibold text-green-300">Tx/s</h3>
+        <p class="text-xl mt-2 font-bold">88</p>
+      </div>
+    </div>
+
+    <!-- Latest Blocks -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold mb-3">Latest Blocks</h2>
+      <div class="space-y-2">
+        <div class="bg-gray-800 p-3 rounded border border-gray-700 flex justify-between">
+          <span>Block #1234</span>
+          <span>12 tx | 2.1s ago</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded border border-gray-700 flex justify-between">
+          <span>Block #1233</span>
+          <span>15 tx | 8.6s ago</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded border border-gray-700 flex justify-between">
+          <span>Block #1232</span>
+          <span>11 tx | 17.2s ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Transactions -->
+    <div>
+      <h2 class="text-2xl font-bold mb-3">Latest Transactions</h2>
+      <div class="space-y-2">
+        <div class="bg-gray-800 p-3 rounded border border-gray-700">
+          <span class="block font-mono text-green-400">0xabc123... → 0xdef456... | 100 PKRD</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded border border-gray-700">
+          <span class="block font-mono text-green-400">0xaaa111... → 0xbbb222... | 250 PKRD</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded border border-gray-700">
+          <span class="block font-mono text-green-400">0x999888... → 0x777666... | 50 PKRD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+ f55b9d8fdddfb2cd4fc97bef667756063d3d4927
 </body>
 </html>
